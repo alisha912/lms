@@ -1,0 +1,587 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ffffff59;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 999999;
+}
+
+.loader {
+  width: 100%;
+  height: 15px;
+  text-align: center;
+}
+
+.dot {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  margin: 0 2px;
+  display: inline-block;
+}
+
+.dot:first-child:before {
+  animation-delay: 0ms;
+}
+
+.dot:first-child:after {
+  animation-delay: 0ms;
+}
+
+.dot:last-child:before {
+  animation-delay: 200ms;
+}
+
+.dot:last-child:after {
+  animation-delay: 200ms;
+}
+
+.dot:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  background-color: blue;
+  animation-name: dotHover;
+  animation-duration: 900ms;
+  animation-timing-function: cubic-bezier(0.82, 0, 0.26, 1);
+  animation-iteration-count: infinite;
+  animation-delay: 100ms;
+  background: #00433c;
+  border-radius: 100%;
+}
+
+.dot:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: black;
+  box-shadow: 0px 0px 1px black;
+  opacity: 0.2;
+  width: 100%;
+  height: 3px;
+  left: 0;
+  bottom: -2px;
+  border-radius: 100%;
+  animation-name: dotShadow;
+  animation-duration: 900ms;
+  animation-timing-function: cubic-bezier(0.82, 0, 0.26, 1);
+  animation-iteration-count: infinite;
+  animation-delay: 100ms;
+}
+
+.instructor-inner-course {
+  padding: 0px;
+}
+
+.btn-danger-custom {
+  border: dashed 1px #ab4040;
+  color: #ab4040;
+}
+
+.btn-danger-custom:hover {
+  border-color: #ff0000 !important;
+  color: #ff0000 !important;
+}
+
+.btn-primary-border {
+  border: dashed 1px #5664d2;
+  color: #5664d2;
+}
+
+.btn-primary-border:hover {
+  border-color: #1b2fc9 !important;
+  color: #1b2fc9 !important;
+}
+
+.btn-primary-custom {
+  display: inline-block;
+  padding: 0.47rem 0.75rem;
+  background-color: #5664d2;
+  color: #fff;
+  border-radius: 6px;
+}
+
+.btn-success-custom {
+  display: inline-block;
+  padding: 0.47rem 0.75rem;
+  background-color: #1fe240;
+  color: #fff;
+  border-radius: 6px;
+}
+
+.image-preview-container {
+  padding: 2%;
+  margin: 0 auto;
+  /* max-width: 600px; */
+  /* height: auto; */
+  max-height: 20vw;
+  width: auto;
+  overflow: hidden;
+}
+
+.image-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.login {
+  border-left: 1px solid #e3d8d8;
+  border-top: 1px solid #e3d8d8;
+  border-bottom: 1px solid #e3d8d8;
+}
+
+.logout {
+  border: 1px solid #e3d8d8;
+}
+
+.signup {
+  border-right: 1px solid #e3d8d8;
+  border-top: 1px solid #e3d8d8;
+  border-bottom: 1px solid #e3d8d8;
+}
+
+.navbar-brand-box {
+  width: 11.6vw;
+}
+
+.navbar-brand-box.course-content {
+  width: 34vw;
+}
+
+.navbar-brand-box-collapsed {
+  width: 3.5vw;
+  display: none;
+}
+
+.navbar-brand-box-collapsed .logo-collapsed {
+  display: none;
+}
+
+.vertical-menu-collapsed {
+  width: 3.5vw;
+}
+
+.vertical-menu-course-collapsed {
+  width: 0px;
+}
+
+.vertical-menu-course-content {
+  width: 35%;
+}
+
+.main-content-collapsed {
+  margin-left: 3.5vw !important;
+}
+
+.main-content-enrolled {
+  margin-left: 35%;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-content-enrolled-collapsed {
+  margin-left: 2.5vw;
+}
+
+.uploaded-file-thumbnail {
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+
+.uploaded-file-thumbnail img {
+  width: 100%;
+}
+
+.uploaded-file-thumbnail svg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+.uploaded-video-thumbnail {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.uploaded-file-content-thumbnail {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* .uploaded-file-content-thumbnail img {
+  width: 100%;
+  background
+} */
+
+.uploaded-file-content-thumbnail svg:nth-child(1) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 5px;
+  z-index: 5;
+}
+
+.uploaded-file-content-thumbnail svg:nth-child(2) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 5px;
+  z-index: 5;
+}
+
+.uploaded-zip-thumbnail {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.uploaded-audio-thumbnail {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-custom-style {
+  width: 50vw !important;
+}
+
+/* .certificate-modal-custom {
+  margin-left: 3vw !important;
+} */
+
+.custom-button-enroll {
+  color: #ffffff;
+  padding: 5px;
+}
+
+/* Navbar NonAuth */
+.header-fixed {
+  top: 0 !important;
+}
+
+.header-wrapper {
+  padding: 0 0 !important;
+}
+
+.header-wrapper .menu-area .signup {
+  background: #458cf0 !important;
+}
+
+.header-wrapper .menu-area .login {
+  color: #458cf0 !important;
+}
+
+/* Hero Area */
+.banner-section .section-wrapper .banner-content form button {
+  background: #3f7bcf !important;
+}
+
+.lab-btn-text i {
+  color: #458cf0 !important;
+}
+
+.icofont-video-alt {
+  color: #458cf0 !important;
+}
+
+.profile-picture {
+  margin: 2rem auto !important;
+  width: 400px !important;
+  height: auto !important;
+}
+
+.csd-title {
+  background: #458cf0 !important;
+}
+
+.se-resizing-bar.sun-editor-common {
+  display: none !important;
+}
+
+.course-price {
+  background: #458cf0 !important;
+}
+
+.course-content h4 {
+  color: #458cf0 !important;
+}
+
+.course-content h4:hover,
+.course-content .ca-name:hover,
+.course-content .lab-btn-text:hover {
+  color: #458cf0 !important;
+}
+
+/* Ant Design */
+.dynamic-delete-button {
+  position: relative;
+  top: 4px;
+  margin: 0 8px;
+  color: #999;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.dynamic-delete-button:hover {
+  color: #777;
+}
+.dynamic-delete-button[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Radio Group Custom for QUIZ */
+.ant-radio-group {
+  display: block;
+}
+
+.ant-radio-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  border: 1px solid #d9d9d9;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.ant-radio-wrapper:hover {
+  border-color: #1890ff;
+}
+
+.ant-radio-checked:disabled {
+  color: white;
+}
+
+.ant-radio-checked .ant-radio-wrapper {
+  background-color: #1890ff;
+  border-color: #1890ff;
+}
+
+.ant-radio-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+/* Checkbox Group Custom for QUIZ */
+.ant-checkbox-group {
+  display: block;
+}
+
+.ant-checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  border: 1px solid #d9d9d9;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.ant-checkbox-wrapper:hover {
+  border-color: #1890ff;
+}
+
+.ant-checkbox-checked:disabled .ant-checkbox-wrapper:disabled {
+  color: white;
+}
+
+.ant-checkbox-checked .ant-checkbox-wrapper {
+  background-color: #1890ff;
+  border-color: #1890ff;
+}
+
+.ant-checkbox-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+.title-container {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.author-header {
+  display: flex;
+  align-items: center;
+}
+
+/* Certificate Styles */
+
+.certificate-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Certificate styles */
+.certificate {
+  background-color: #fff;
+  border: 3px solid #458cf0;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 40px;
+  width: 100%;
+}
+
+.certificate-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.certificate-logo {
+  width: 180px;
+  height: 180px;
+}
+
+.certificate-logo img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.certificate-title h1 {
+  font-size: 36px;
+  color: #458cf0;
+  text-align: center;
+}
+
+.certificate-body {
+  margin: 20px 0;
+}
+
+.certificate-student-name,
+h2,
+h3,
+.certificate-date {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.certificate-body h2 {
+  color: #458cf0;
+  text-transform: uppercase;
+}
+
+.certificate-actions {
+  text-align: center;
+}
+
+.certificate-icon {
+  font-size: 36px;
+  color: #458cf0;
+}
+
+.certificate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.certificate-date {
+  font-size: 16px;
+}
+
+.certificate-date span {
+  color: #458cf0;
+}
+
+/* End Certificate Styles */
+
+.custom-progress-bar {
+  width: 75% !important;
+}
+
+.text-custom-center {
+  width: 100%;
+  position: relative;
+  height: 100%;
+}
+
+.spinner-border {
+  display: block;
+  position: fixed;
+  top: calc(50% - (58px / 2));
+  right: calc(50% - (58px / 2));
+  color: #458cf0;
+}
+
+#backdrop {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+}
+
+@keyframes dotShadow {
+  0% {
+    transform: scaleX(1);
+  }
+  50% {
+    opacity: 0;
+    transform: scaleX(0.6);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes dotHover {
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: -50px;
+    transform: scale(1.1);
+  }
+  100% {
+    top: 0;
+  }
+}
